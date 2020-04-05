@@ -1,0 +1,28 @@
+.gameBox {
+    background-color: grey;
+}
+
+.gameBox,
+.gameBox * {
+    border: .2vh dashed black;
+}
+
+.controls > *,
+.skin-change > div {
+    background-color: darkgray;
+    font-size: 3vh;
+}
+
+.menu > ul {
+    font-size: 3vh;
+}
+
+.accent:before {
+    content: "We can add text via CSS";
+}
+
+.controls > div:active,
+.skin-change > div:active,
+.menu > ul.active {
+    border: .2vh dashed yellow;
+}

@@ -1,0 +1,72 @@
+body {
+    font-family: 'Allerta Stencil', sans-serif;
+    color: var(--text-color);
+    text-shadow: 0 0 1vh var(--text-color);
+    background: linear-gradient(
+        45deg, 
+        var(--brown) 16.2%,
+        var(--dirty-olive) 50%, 
+        var(--brown) 100%
+        );
+}
+
+.screen,
+.gameBox {
+    border-top-left-radius: 20vh 2vh;
+    border-top-right-radius: 20vh 2vh;
+    border-bottom-left-radius: 20vh 2vh;
+    border-bottom-right-radius: 20vh 2vh;
+}
+
+.gameBox {
+    position: relative;
+    overflow: hidden;
+    margin: .75em auto 0;
+
+    border-right: 2vh solid var(--dark-brown);
+    border-bottom: 1vh solid var(--brown);
+    border-left: 2vh solid var(--dirty-olive);
+
+    border-bottom-right-radius: 12.5vh;
+
+    background: linear-gradient(
+        -45deg, 
+        var(--brown) 16.2%, 
+        var(--dirty-olive) 50%, 
+        var(--brown) 100%
+    );
+
+    box-shadow: 0 0 10vh 0 black;
+    
+}
+
+.logo {
+    text-shadow: 0 0 1vh var(--text-color);
+}
+
+.menu {
+    border: .4vh solid var(--green);
+    box-shadow: 0 0 1vh 0 var(--green),
+        0 0 1vh 0 var(--green) inset;
+}
+
+.menu > ul {
+    padding-inline-start: 0;
+
+    font-family: monospace;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2vh;
+    font-weight: 900;
+    color: var(--green);
+    text-shadow: 0 0 1vh var(--green);
+
+    border: .4vh solid transparent;
+}
+
+.menu > ul.active {
+    border: .4vh solid var(--green);
+    box-shadow: 0 0 1vh 0 var(--green),
+        0 0 1vh 0 var(--green) inset;
+}
+

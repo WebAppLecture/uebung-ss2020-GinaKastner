@@ -1,0 +1,11 @@
+:root {
+    --bright-gold-trans: rgba(255, 236, 179, 0.6);
+    --dark-gold-trans: rgba(82, 62, 22,0.6);
+    --dark-gold: rgb(82, 62, 22);
+    --gold: rgb(206, 168, 85);
+    --bright-gold: rgb(255, 236, 179);
+    --gold-glow: rgb(68, 53, 1);
+    --shadow: black;
+
+    --green: #6bd26b;;
+}

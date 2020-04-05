@@ -1,0 +1,40 @@
+.gameBox {
+    
+    background: linear-gradient(-45deg, transparent 16.5%, rgb(97, 73, 43) 16.7%, rgb(114, 133, 72) 50%, rgb(97, 73, 43) 100%);
+
+    background: radial-gradient(circle at 100% 100%, transparent 16%, rgb(97, 73, 43) 16.2%, rgb(114, 133, 72) 50%, rgb(97, 73, 43) 100%);
+    
+}
+
+.accent {
+    /* Position und Größe*/
+    position: absolute;
+    right: .5vh;
+    bottom: .5vh;
+    width: 20vh;
+    height: 20vh; 
+    /* Hintergrund */
+    background-color: #777; 
+    background-clip: padding-box;
+    /* Border */
+    border: 1vh dashed #999; 
+    border-radius: 50%;
+    /* Material Design */
+    box-shadow: 0 0 0 .8vh inset #999, 
+    0 0 .5vh 1.2vh inset #666, 
+    0 0 .5vh 3vh inset #aaa, 
+    0 0 0 3.5vh inset #666, 
+    0 0 0 4.5vh inset #999,
+    0 0 .5vh 7vh inset #61492b,
+    0 0 0 7vh inset black,
+    0 0 0 8vh inset #aaa;
+    /* Animation */
+    animation: rotation 3s normal linear infinite;
+    /* Z-Index */
+    z-index: -1;
+}
+
+@keyframes rotation {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg); }
+}

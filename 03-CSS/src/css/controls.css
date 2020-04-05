@@ -1,0 +1,56 @@
+.controls {
+    width: 100%;
+    height: 30vh;
+}
+
+.controls > * {
+    position: absolute;
+    cursor: pointer;
+}
+
+.d-pad {
+    transform-origin: 50% 120%;
+
+    left: 20%;
+    width: 7vh;
+    height: 9.5vh;
+}
+
+.right {
+    transform: rotate(90deg);
+}
+
+.down {
+    transform: rotate(180deg);
+}
+
+.left {
+    transform: rotate(270deg);
+}
+
+.big-button {   
+    width: 7vh;
+    height: 7vh;
+    
+    border-radius: 50%;
+}
+
+.reset {
+    top: 1.5vh;
+    right: 4vh;
+
+    width: 7.5vh;
+    height: 4vh;
+}
+
+
+
+.A {
+    left: 80%;
+    margin-top: 2vh;
+}
+
+.B {
+    left: 62%;
+    margin-top: 8vh;
+}

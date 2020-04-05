@@ -1,0 +1,124 @@
+.controls > *,
+.skin-change > div {    
+    background-color: var(--orange);
+
+    color: var(--purple);
+    text-align: center;
+    font-family: monospace;
+    font-weight: 900; 
+}
+
+.d-pad {
+    border-top-left-radius: 3.5vh;
+    border-top-right-radius: 3.5vh;
+    border-bottom-right-radius: 5vh 100%;
+    border-bottom-left-radius: 5vh 100%;
+
+    line-height: 9.5vh;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10vh;
+}
+
+.d-pad:active,
+.d-pad:focus {
+    box-shadow: 0 0 .6vh 0 var(--shadow),
+    0 0 0 .9vh inset var(--purple-trans);
+    font-size: 9.5vh;
+}
+
+.up {
+    box-shadow: 0 0 .6vh 0 var(--shadow),
+        1vh 1vh .5vh .1vh inset var(--button-highlight), 
+        0 0 0 .8vh inset var(--purple-trans);
+}
+
+.right {
+    box-shadow: 0 0 .6vh 0 var(--shadow),
+        1vh -1vh .5vh .1vh inset var(--button-highlight), 
+        0 0 0 .8vh inset var(--purple-trans);
+}
+
+.down {
+    box-shadow: 0 0 .6vh 0 var(--shadow),
+        -1vh -1vh .5vh .1vh inset var(--button-highlight), 
+        0 0 0 .8vh inset var(--purple-trans);
+}
+
+.left {
+    box-shadow: 0 0 .6vh 0 var(--shadow),
+        -1vh 1vh .5vh .1vh inset var(--button-highlight), 
+        0 0 0 .8vh inset var(--purple-trans);
+}
+
+.big-button {   
+    transform: rotate(-20deg);
+
+    box-shadow: 0 0 .6vh 0 var(--shadow),
+        .4vh .8vh .5vh .1vh inset var(--button-highlight), 
+        0 0 0 .8vh inset var(--purple-trans);
+
+    line-height: 7vh;
+    font-size: 5.5vh;
+}
+
+.reset {
+    border-radius: 1.5vh;
+ 
+    box-shadow: 0 0 .6vh 0 var(--shadow),
+        .4vh .8vh .5vh .1vh inset var(--button-highlight), 
+        0 0 0 .8vh inset var(--purple-trans);
+
+    line-height: 4vh;
+    font-size: 2.3vh;
+}
+
+.big-button:active,
+.reset:active {
+    box-shadow: 0 0 .6vh 0 var(--shadow),
+    0 0 0 .9vh inset var(--purple-trans);
+}
+
+.big-button:active {
+    font-size: 5.3vh;
+}
+
+.reset:active {
+    font-size: 2.2vh;
+}
+
+.A {
+    left: 80%;
+    margin-top: 2vh;
+}
+
+.B {
+    left: 62%;
+    margin-top: 8vh;
+}
+
+.skin-change > div {
+    height: 5vh;
+    width: 4vh;
+    margin-right: .5vh;
+
+    box-shadow: 0 0 .6vh 0 var(--shadow),
+    .4vh .8vh .5vh .1vh inset var(--button-highlight), 
+    0 0 0 .8vh inset var(--purple-trans);
+    
+    text-align: center;
+    font-size: 3vh;
+    line-height: 5vh;
+}
+
+.skin-change > div:active {
+    box-shadow: 0 0 .6vh 0 var(--shadow),
+    0 0 0 .9vh inset var(--purple-trans);
+}
+
+.previous {
+    border-radius: 50% 0 0 50%;
+}
+
+.next {
+    border-radius:  0 50% 50% 0;
+}

@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+.centered {
+    margin: 0 auto;
+}
+
+.info {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 250px;   
+    border: 5px solid black;
+    text-align: center;
+}

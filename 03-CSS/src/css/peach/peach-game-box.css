@@ -1,0 +1,66 @@
+body {
+    background-color: var(--orange);
+}
+
+.gameBox {
+    border-radius: 4vh;
+
+    background: linear-gradient(to right bottom, var(--orange), var(--purple));
+    box-shadow: -.5vh -.5vh 2vh -.2vh var(--dark-purple) inset,
+        .6vh .6vh .7vh .2vh var(--dark-purple),
+        0 0 1.5vh -.5vh var(--dark-purple);
+}
+
+.logo,
+.accent {
+    background-color: var(--purple);
+    background: linear-gradient(to right, var(--purple), var(--dark-purple));
+
+    color: transparent;
+    font-family: monospace;
+
+    font-weight: bold;
+    text-shadow: .15vh .15vh .3vh var(--orange-trans);
+    -webkit-background-clip: text;
+       -moz-background-clip: text;
+            background-clip: text;
+}
+
+.accent:before {
+    font-size: 10vh;
+    content: "/////";
+}
+
+.screen {
+    border-radius: 1.5vh;
+
+    box-shadow: 0 0 .8vh .2vh var(--dark-purple) inset,
+        .7vh .6vh .9vh 0 var(--orange-trans),
+        -.4vh -.7vh 1.4vh 0 var(--dark-purple-trans);
+}
+
+.menu {
+    border: .4vh solid var(--green);
+    box-shadow: 0 0 1vh 0 var(--green),
+        0 0 1vh 0 var(--green) inset;
+}
+
+.menu > ul {
+    padding-inline-start: 0;
+
+    font-family: monospace;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2vh;
+    font-weight: 900;
+    color: var(--green);
+    text-shadow: 0 0 1vh var(--green);
+
+    border: .4vh solid transparent;
+}
+
+.menu > ul.active {
+    border: .4vh solid var(--green);
+    box-shadow: 0 0 1vh 0 var(--green),
+        0 0 1vh 0 var(--green) inset;
+}

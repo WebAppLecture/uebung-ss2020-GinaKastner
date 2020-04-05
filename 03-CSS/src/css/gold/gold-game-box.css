@@ -1,0 +1,70 @@
+body {
+    background: radial-gradient(ellipse at center, var(--gold-glow) 50%,var(--shadow) 100%);
+}
+
+.gameBox {
+    border-top: 3vh solid var(--gold);
+    border-right: 3vh solid var(--dark-gold);
+    border-bottom: 3vh solid var(--gold);
+    border-left: 3vh solid var(--bright-gold);
+
+    border-radius: .3vh;
+
+    background: linear-gradient(to right, var(--gold) 25%,var(--bright-gold) 60%,var(--dark-gold) 85%, var(--dark-gold) 98%, var(--gold) 100%); 
+
+    box-shadow: 0 0 15vh -5vh red;
+}
+
+
+.logo,
+.accent {
+    background-color: var(--dark-gold);
+    background: linear-gradient(to right, var(--dark-gold), var(--shadow));
+
+    color: transparent;
+    font-family: monospace;
+
+    font-weight: bold;
+    text-shadow: .15vh .15vh .3vh var(--bright-gold-trans);
+    -webkit-background-clip: text;
+       -moz-background-clip: text;
+            background-clip: text;
+}
+
+.accent:before {
+    font-size: 10vh;
+    content: "||||";
+}
+
+.screen {
+    border-top: 1vh solid var(--gold);
+    border-right: 1vh solid var(--bright-gold);
+    border-bottom: 1vh solid var(--gold);
+    border-left: 1vh solid var(--dark-gold);
+}
+
+.menu {
+    border: .4vh solid var(--green);
+    box-shadow: 0 0 1vh 0 var(--green),
+        0 0 1vh 0 var(--green) inset;
+}
+
+.menu > ul {
+    padding-inline-start: 0;
+
+    font-family: monospace;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2vh;
+    font-weight: 900;
+    color: var(--green);
+    text-shadow: 0 0 1vh var(--green);
+
+    border: .4vh solid transparent;
+}
+
+.menu > ul.active {
+    border: .4vh solid var(--green);
+    box-shadow: 0 0 1vh 0 var(--green),
+        0 0 1vh 0 var(--green) inset;
+}

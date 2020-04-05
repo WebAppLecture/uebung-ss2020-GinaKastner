@@ -1,0 +1,78 @@
+.controls > *,
+.skin-change > div {
+    background-color: var(--brown);
+
+    font-size: 3vh;
+    text-align: center;
+
+    background: linear-gradient(
+        0deg, 
+        black 0%,
+        var(--dark-brown) 10%,
+        var(--brown) 40%, 
+        var(--brown) 60%,
+        var(--dark-brown) 90%,
+        black 100%
+        );
+
+    box-shadow: 0 0 .5vh 0 black;
+}
+
+.controls > *{
+    font-size: 5vh;
+
+}
+
+.controls > div:active,
+.skin-change > div:active {
+    box-shadow: 0 0 2vh 0 black inset,
+        0 0 1vh 0 var(--text-color);
+}
+
+.big-button:active {
+    font-size: 4.8vh;
+}
+
+.d-pad {
+    background: linear-gradient(
+        90deg, 
+        black 0%,
+        var(--dark-brown) 10%,
+        var(--brown) 40%, 
+        var(--brown) 60%,
+        var(--dark-brown) 90%,
+        black 100%
+        );
+
+    border-radius: 2vh;
+    border-bottom-left-radius: 100% 75%;
+    border-top-right-radius: 100% 75%;
+
+}
+
+.reset {
+    right: 2vh;
+    top: 2.5vh;
+
+    transform: rotate(10deg);
+
+    border-radius: 1vh;
+
+    font-size: 2.5vh;
+}
+
+.skin-change > div {
+    width: 5vh;
+    height: 4vh;
+    margin-right: 1vh;
+}
+
+.previous {
+    border-top-left-radius: 100% 50%;
+    border-bottom-left-radius: 100% 50%;
+}
+
+.next {
+    border-top-right-radius: 100% 50%;
+    border-bottom-right-radius: 100% 50%;
+}

@@ -1,0 +1,18 @@
+:root {
+    --desktop: rgb(0, 128, 128);
+    --lightgrey: rgb(192, 192, 192);
+    --darkgrey: rgb(128, 128, 128);
+    --shadow: #101010;
+    --highlight: #f1f1f1;
+
+    --green: #6bd26b;
+}
+
+/* MS-Sans True Type Font port by Leo Leontev; https://stackoverflow.com/questions/30683657/use-windows-95-font-on-webpage */
+@font-face {
+    font-family: 'ms sans';
+    src: url('MyFont.woff2') format('woff2'),
+        url('MyFont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
