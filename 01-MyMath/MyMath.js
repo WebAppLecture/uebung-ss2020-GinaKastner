@@ -15,30 +15,47 @@ export class MyMath {
         // 'this' referenziert den Kontext in dem die aktuelle Funktion aufgerufen wird. 
         // Hier referenziert es die Instanz der Klasse MyMath die wir gerade erstellen.
         // mit 'value * 1' erzwingen wir, dass value als number gelesen wird.
-        this.value = value * 1; 
+        if(!value) {
+            this.value = 0;
+        } else {
+            this.value = value * 1; 
+        }
     }
 
     add(value) {
-
+        this.value += value;
     }
 
     subtract(value) {
-
+        this.value -= value;
     }
 
     multiply(value) {
-
+        this.value *= value;
     }
 
     divide(value) {
-
+        if(value != 0) {
+            this.value /= value;
+        } 
     }
 
     pow(value) {
-
+        if(value == 0) this.value = 1; 
+        else if(value > 1) {  
+            let originalValue = this.value; 
+            for(let i = 1; i < value; i++) {
+                this.value *= originalValue;
+            }
+        }
     }
 
     faculty() {
-
+        if(this.value > 1) {
+            for(let i = this.value - 1; i > 1; i--) {
+                this.value *= i;
+            }
+        }
     }
 }
+
