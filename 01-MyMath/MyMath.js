@@ -24,20 +24,24 @@ export class MyMath {
 
     add(value) {
         this.value += value;
+        return this;
     }
 
     subtract(value) {
         this.value -= value;
+        return this;
     }
 
     multiply(value) {
         this.value *= value;
+        return this;
     }
 
     divide(value) {
         if(value != 0) {
             this.value /= value;
         } 
+        return this;
     }
 
     pow(value) {
@@ -48,14 +52,16 @@ export class MyMath {
                 this.value *= originalValue;
             }
         }
+        return this;
     }
 
     faculty() {
-        if(this.value > 1) {
-            for(let i = this.value - 1; i > 1; i--) {
+        if(this.value % 1 === 0 && this.value > 1) { 
+            for(let i = this.value - 1; i > 1; i--) { 
                 this.value *= i;
             }
         }
+        return this;
     }
 }
 
