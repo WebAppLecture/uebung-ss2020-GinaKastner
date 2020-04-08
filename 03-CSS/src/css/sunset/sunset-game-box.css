@@ -30,30 +30,10 @@ body {
                 /*inner blend*/
                 .3vh 2.1vh 2vh .9vh var(--orange) inset,
                 0 .005vh 5vh .1vh var(--red) inset;
-            }
-
-.logo,
-.accent {
-    /*
-    https://de.cleanpng.com/png-mbubsd/download-png.html
-    */
-    background-color: var(--shadowRed);
-    background: linear-gradient(to right, var(--purple), var(--dark-purple));
-
-    color: transparent;
-    font-family: monospace;
-
-    font-weight: lighter;
-    font-size: 3vh;
-    text-shadow: .15vh .15vh .3vh var(--orange-trans);
-    -webkit-background-clip: text;
-       -moz-background-clip: text;
-            background-clip: text;
 }
 
-.accent:before {
-    font-size: 5vh;
-    content: ""
+.logo {
+    color: transparent;
 }
 
 .screen {
