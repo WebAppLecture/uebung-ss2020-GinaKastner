@@ -50,7 +50,7 @@ body {
 }
 
 .screen.on {
-    background: #060;
+    background: green;
     transition: background .5s;
 }
 

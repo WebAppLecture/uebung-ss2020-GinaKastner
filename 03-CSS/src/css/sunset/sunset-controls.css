@@ -1,0 +1,156 @@
+.controls > *,
+.skin-change > div {    
+    background-color: var(--orange);
+
+    color: var(--red);
+    text-align: center;
+    font-family: monospace;
+    font-weight: 900; 
+}
+
+.d-pad {
+    border-top-left-radius: 1vh 100%;
+    border-top-right-radius: 1vh 100%;
+    border-bottom-right-radius: 1vh 100%;
+    border-bottom-left-radius: 1vh 100%;
+    border-spacing: 10px;
+
+    box-sizing: content-box unset;
+    width: 7vh;
+    height: 7vh;
+
+    margin-top: 4vh;
+    margin-left: 3vh;
+
+    line-height: 11vh;
+    font-family: "Georgia", serif;
+    font-size: 7vh;
+}
+
+.d-pad:active,
+.d-pad:focus {
+    box-shadow: 
+        0 0 .6vh 0.1vh var(--shadowRed),
+        0 0 0 .9vh inset var(--red);
+        font-size: 7.5vh;
+}
+
+.up {
+    margin-top: 2vh;
+    box-shadow: 
+        .4vh .2vh 1vh .5vh var(--shadowRed),
+        .5vh .2vh .5vh .1vh inset var(--brightOrange), 
+        0 0 0 .9vh inset var(--red);
+}
+
+.right {
+    margin-left: 5vh;
+    box-shadow: 
+        .1vh -.6vh 1vh .5vh var(--shadowRed),
+        .5vh -.2vh .5vh .1vh inset var(--brightOrange), 
+        0 0 0 .9vh inset var(--red);
+}
+
+.down {
+    margin-top: 6vh;
+    box-shadow:
+        -.3vh -.4vh 1vh .5vh var(--shadowRed),
+        -.5vh .2vh .5vh .1vh inset var(--brightOrange), 
+        0 0 0 .9vh inset var(--red);
+}
+
+.left {
+    margin-left: 1vh;
+    box-shadow: 
+        -.3vh .4vh 1vh .5vh var(--shadowRed),
+        -.5vh .2vh .5vh .1vh inset var(--brightOrange), 
+        0 0 0 .9vh inset var(--red);
+}
+
+.big-button {  
+    box-shadow: 
+        .3vh .4vh 1vh .5vh var(--shadowRed),
+        .5vh .2vh .5vh .1vh inset var(--brightOrange), 
+        0 0 0 .9vh inset var(--red);
+
+    line-height: 7vh;
+    font-size: 5.5vh;
+}
+
+.reset {
+    border-radius: 1.5vh;
+ 
+    box-shadow: 
+        .6vh .3vh .5vh .2vh var(--shadowRed),
+        .4vh .3vh .5vh .1vh inset var(--brightOrange), 
+        0 0 0 .9vh inset var(--red);
+
+    line-height: 4vh;
+    font-size: 2vh;
+}
+
+.big-button:active,
+.reset:active {
+    border-radius: 1.5vh;
+ 
+    box-shadow: 
+        0 .3vh .5vh 0 inset var(--brightOrange), 
+        0 0 0 .9vh inset var(--red);
+
+    line-height: 4vh;
+    font-size: 2vh;
+}
+
+.big-button:active {
+    border-radius: 3.3vh;
+
+    box-shadow: 
+        0 0 0 .9vh inset var(--red);
+
+    line-height: 7vh;
+    font-size: 5.5vh;
+}
+
+.reset:active {
+    font-size: 2.2vh;
+}
+
+.A {
+    bottom: 15%;
+    left: 68%;
+}
+
+.B {
+    top: 57%;
+    left: 68%;
+}
+
+.skin-change > div {
+    margin-bottom: 2vh;
+    margin-left: 1vh;
+    height: 4vh;
+    width: 4vh;
+
+    box-shadow: 
+        .3vh .5vh .6vh .1vh var(--shadowRed),
+        .2vh .8vh .5vh .1vh inset var(--brightOrange), 
+        0 0 0 .8vh inset var(--red);
+    
+    text-align: center;
+    font-size: 3vh;
+    line-height: 4vh;
+}
+
+.skin-change > div:active {
+    box-shadow: 
+        0 0 .6vh 0 var(--shadowRed),
+        0 0 0 .9vh inset var(--red);
+}
+
+.previous {
+    border-radius: 50% 0 0 50%;
+}
+
+.next {
+    border-radius:  0 50% 50% 0;
+}
