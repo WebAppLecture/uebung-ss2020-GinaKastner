@@ -22,7 +22,7 @@
     margin-top: 4vh;
     margin-left: 3vh;
 
-    line-height: 11vh;
+    line-height: 9.5vh;
     font-family: "Georgia", serif;
     font-size: 7vh;
 }
@@ -32,57 +32,64 @@
     box-shadow: 
         0 0 .6vh 0.1vh var(--shadowRed),
         0 0 0 .9vh inset var(--red);
-        font-size: 7.5vh;
 }
 
 .up {
-    margin-top: 2vh;
+    margin-top: 1.3vh;
     box-shadow: 
-        .4vh .2vh 1vh .5vh var(--shadowRed),
-        .5vh .2vh .5vh .1vh inset var(--brightOrange), 
+        .3vh .4vh 1vh .5vh var(--shadowRed),
+        .4vh .3vh .5vh .1vh inset var(--brightOrange), 
+        -.4vh -.3vh .6vh .01vh inset var(--shadowRed),
         0 0 0 .9vh inset var(--red);
 }
 
 .right {
-    margin-left: 5vh;
+    margin-left: 6vh;
     box-shadow: 
-        .1vh -.6vh 1vh .5vh var(--shadowRed),
-        .5vh -.2vh .5vh .1vh inset var(--brightOrange), 
+        .3vh -.4vh 1vh .5vh var(--shadowRed),
+        .4vh -.3vh .5vh .1vh inset var(--brightOrange), 
+        -.3vh .4vh .6vh .01vh inset var(--shadowRed),
         0 0 0 .9vh inset var(--red);
 }
 
 .down {
-    margin-top: 6vh;
+    margin-top: 6.5vh;
     box-shadow:
         -.3vh -.4vh 1vh .5vh var(--shadowRed),
-        -.5vh .2vh .5vh .1vh inset var(--brightOrange), 
+        -.4vh -.3vh .5vh .1vh inset var(--brightOrange), 
+        .3vh .3vh .6vh .01vh inset var(--shadowRed),
         0 0 0 .9vh inset var(--red);
 }
 
 .left {
-    margin-left: 1vh;
+    margin-left: .1vh;
     box-shadow: 
-        -.3vh .4vh 1vh .5vh var(--shadowRed),
-        -.5vh .2vh .5vh .1vh inset var(--brightOrange), 
+        -.3vh .4vh 1vh .5vh var(--lightShadowRed),
+        -.4vh .3vh .5vh .1vh inset var(--brightOrange), 
+        .3vh -.4vh .5vh .01vh inset var(--shadowRed),
         0 0 0 .9vh inset var(--red);
 }
 
+/*AB*/
 .big-button {  
     box-shadow: 
-        .3vh .4vh 1vh .5vh var(--shadowRed),
-        .5vh .2vh .5vh .1vh inset var(--brightOrange), 
+        .3vh .3vh 1vh .5vh var(--shadowRed),
+        .3vh .3vh .5vh .1vh inset var(--brightOrange), 
+        -.3vh -.2vh .4vh .07vh inset var(--shadowRed),
         0 0 0 .9vh inset var(--red);
 
     line-height: 7vh;
     font-size: 5.5vh;
 }
 
+/*menu*/
 .reset {
     border-radius: 1.5vh;
  
     box-shadow: 
-        .6vh .3vh .5vh .2vh var(--shadowRed),
+        .5vh .2vh .5vh .2vh var(--shadowRed),
         .4vh .3vh .5vh .1vh inset var(--brightOrange), 
+        -.25vh -.15vh .4vh .07vh inset var(--shadowRed),
         0 0 0 .9vh inset var(--red);
 
     line-height: 4vh;
@@ -94,7 +101,7 @@
     border-radius: 1.5vh;
  
     box-shadow: 
-        0 .3vh .5vh 0 inset var(--brightOrange), 
+        0 .4vh .5vh 0 inset var(--brightOrange), 
         0 0 0 .9vh inset var(--red);
 
     line-height: 4vh;
@@ -111,10 +118,6 @@
     font-size: 5.5vh;
 }
 
-.reset:active {
-    font-size: 2.2vh;
-}
-
 .A {
     bottom: 15%;
     left: 68%;
@@ -125,6 +128,7 @@
     left: 68%;
 }
 
+/*switch*/
 .skin-change > div {
     margin-bottom: 2vh;
     margin-left: 1vh;
@@ -133,7 +137,8 @@
 
     box-shadow: 
         .3vh .5vh .6vh .1vh var(--shadowRed),
-        .2vh .8vh .5vh .1vh inset var(--brightOrange), 
+        .3vh .4vh .5vh .1vh inset var(--brightOrange), 
+        -.2vh -.2vh .5vh .01vh inset var(--shadowRed),
         0 0 0 .8vh inset var(--red);
     
     text-align: center;
