@@ -4,7 +4,6 @@ import { GameObject, MovableGameObject } from "../GameObject.js";
 export class FallingStones extends GameTemplate {
 
     // TODO: 
-    // Fix bug: Player disappears when this.checkBullets/Stones added.
     // 2.6: Prevent infinite shooting.
 
     start() {
@@ -13,9 +12,9 @@ export class FallingStones extends GameTemplate {
         this.points = 0;
         this.lives = 5;
         this.bullets = [];
-        this.bulletSpeed;
+        this.bulletSpeed = 8;
         this.stones = [];
-        this.stoneSpeed = 1;
+        this.stoneSpeed = 2;
         this.stoneSpawnModifier = 0.2; //Determines how long it takes for new stones to appear (percent of screen).
     } 
 
@@ -23,16 +22,16 @@ export class FallingStones extends GameTemplate {
         this.inputBinding = {
             "left": this.player.left.bind(this.player),
             "right": this.player.right.bind(this.player),
-            "up": this.generateBullet()
+            "up": () => this.generateBullet()
         };
     }
 
     update(ctx) {
         this.player.update(ctx);
         this.generateStone(ctx);
-        //this.checkBullets(ctx); //buggy
-        //this.checkStones(ctx);
-        //this.gameOver();
+        this.checkBullets(ctx); 
+        this.checkStones(ctx);
+        this.gameOverMessage();
     }
 
     draw(ctx) {
@@ -67,7 +66,11 @@ export class FallingStones extends GameTemplate {
         // 1) there is no stone yet 
         // 2) the last added stone has passed a certain percentage of the screen.
         if(this.stones.length == 0 || (this.stones.length != 0 && this.stones[this.stones.length - 1].y >= ctx.canvas.height * this.stoneSpawnModifier)) { 
-            this.stones.push(new Stone(Math.random() * ctx.canvas.height), this.stoneSpeed);
+            let positionStone;
+            do { 
+                positionStone = Math.random() * ctx.canvas.width;
+            } while (positionStone < 0 || positionStone > ctx.canvas.width - 50); //Ensure stone fully shown in screen (stone width = 50).
+            this.stones.push(new Stone(positionStone, this.stoneSpeed, true));
         }
     }
 
@@ -81,9 +84,10 @@ export class FallingStones extends GameTemplate {
             this.bullets[i].update(ctx);
         }
         
+        
         //Border
         for(let i = 0; i < this.bullets.length; i++) {
-            if(this.bullets[i].borderReached(ctx)) {
+            if(this.bullets[i].bulletBorderPassed(ctx)) {
                 this.deleteBullet(i);
             }
         }
@@ -97,14 +101,16 @@ export class FallingStones extends GameTemplate {
         
         //Border
         for(let i = 0; i < this.stones.length; i++) {
-            if(this.stones[i].borderReached(ctx)) {
-                this.lives--;
-                if(this.lives === 0) this.gameOver = true;
+            //Active stone: When first contact to border one life is lost.
+            if(this.stones[i].isActive) {
+                if(this.stones[i].stoneBorderReached(ctx)) {
+                    this.lives--;
+                    this.stones[i].isActive = false; //Inactive stone: Life already lost.
+                    if(this.lives === 0) this.gameOver = true;
+                }
             }
-        }
-        
-        for(let i = 0; i < this.stones.length; i++) {
-            if(this.stones[i].borderPassed(ctx)) {
+            //Inactive stones get deleted when out of screen.
+            else if(this.stones[i].stoneBorderPassed(ctx)) {
                 this.deleteStone(i);
             }
         }
@@ -121,12 +127,15 @@ export class FallingStones extends GameTemplate {
         }
     }
 
-    gameOver() {
-        if(this.gameOver) {
+    gameOverMessage() {
+        if(this.gameOver == true) {
             this.gameOverText = [
                 "GAME OVER", 
+                " ",
                 "Score: " + this.points,
-                "rematch: A"];
+                " ", 
+                " ",
+                "New Game: E"];
         }
     }
 
@@ -166,10 +175,10 @@ export class Player extends MovableGameObject {
 export class Bullet extends MovableGameObject {
     
     constructor(player, bulletSpeed) {
-        super(player.x + player.width/2, player.y, 10, 10, "#6bd26b", 0, -bulletSpeed);
+        super(player.x + player.width/2, player.y, 10, 10, "#6bd26b", player.vx, -bulletSpeed);
     }
 
-    borderPassed(ctx) {
+    bulletBorderPassed(ctx) {
         return this.x < 0 || this.x > ctx.canvas.width || this.y < 0 || this.y > ctx.canvas.height;
     }
 }
@@ -177,18 +186,19 @@ export class Bullet extends MovableGameObject {
 
 export class Stone extends MovableGameObject {
     
-    constructor(x, stoneSpeed) {
-        super(x, 0, 50, 100, "#6bd26b", 0, stoneSpeed); //replace 0: -100 when done
+    constructor(x, stoneSpeed, isActive) {
+        super(x, -100, 50, 100, "#6bd26b", 0, stoneSpeed);
+        this.isActive = isActive;
     }
     
-    //Stone has reached border -> check for life lost. 
-    borderReached(ctx) {
+    //Stone has reached border (used for lives). 
+    stoneBorderReached(ctx) {
+        return this.y > ctx.canvas.height - 100;
+    }
+    
+    //Stone has fully passed border (used for deleting stones).
+    stoneBorderPassed(ctx) {
         return this.y > ctx.canvas.height;
-    }
-    
-    //Stone has fully passed border -> check for deleting a stone.
-    borderPassed(ctx) {
-        return this.y > this.height + ctx.canvas.height;
     }
 }
 
