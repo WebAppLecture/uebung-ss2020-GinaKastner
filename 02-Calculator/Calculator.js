@@ -27,18 +27,30 @@ export class Calculator {
         console.log(buttonText);
         
         switch(buttonText) {
+            //Clear.
             case "AC": this.clear(); break;
+
+            //Faculty: Special case, since only operation that has no input paramter.
+            case "!": {
+                this.currentOperation = this.currentCalculation.faculty.bind(this.currentCalculation);
+                let result = this.currentOperation().value;
+                this.printSolution(result);
+                break;
+                };
+
+            //Operations with input paramter.    
             case "+": this.currentOperation = this.currentCalculation.add.bind(this.currentCalculation); break;
             case "-": this.currentOperation = this.currentCalculation.subtract.bind(this.currentCalculation); break;
             case "*": this.currentOperation = this.currentCalculation.multiply.bind(this.currentCalculation); break;
             case "/": this.currentOperation = this.currentCalculation.divide.bind(this.currentCalculation); break;
             case "^": this.currentOperation = this.currentCalculation.pow.bind(this.currentCalculation); break;
-            case "!": this.currentOperation = this.currentCalculation.faculty.bind(this.currentCalculation); break;
+            
+            //Default: For first number create new MyMath instance, for any other number execute operation.
             default: {
                 if(!this.currentCalculation) {
                     this.currentCalculation = new MyMath(buttonText);
                 }
-                else if(this.currentOperation) {
+                else {
                     let result = this.currentOperation(buttonText).value;
                     this.printSolution(result);
                 }
@@ -59,7 +71,6 @@ export class Calculator {
 
     clear() {
         this.currentCalculation = undefined;
-        this.currentOperation = undefined;
         this.outputCalculation.innerHTML = "";
         this.outputSolution.innerHTML = "";
     }

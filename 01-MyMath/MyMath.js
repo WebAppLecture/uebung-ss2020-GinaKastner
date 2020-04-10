@@ -23,7 +23,7 @@ export class MyMath {
     }
 
     add(value) {
-        this.value += value;
+        this.value += value * 1;
         return this;
     }
 
