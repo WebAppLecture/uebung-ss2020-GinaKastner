@@ -22,11 +22,11 @@ export class GameTemplate {
     bindControls() {}
 
     tick(ctx) {
-        if(this.gameOver) {
+        this.update(ctx);
+        if(this.gameOver || this.gameExit) {
             this.gameOverScreen(ctx);
             return;
         }
-        this.update(ctx);
         this.draw(ctx);
     }
 
@@ -48,7 +48,10 @@ export class GameTemplate {
     }
 
     input(type, active) {
-        if(this.gameOver && type === "primary") {
+        if(type === "secondary") {
+            this.gameExit = true;
+        }
+        if((this.gameOver || this.gameExit)&& type === "primary") {
             this.start();   
             this.bindControls();  
         }

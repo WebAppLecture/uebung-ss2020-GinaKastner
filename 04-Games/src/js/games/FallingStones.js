@@ -6,6 +6,7 @@ export class FallingStones extends GameTemplate {
     start() {
         this.player = new Player(8);
         this.gameOver = false;
+        this.gameExit = false;
         this.points = 0;
         this.lives = 5;
         this.bullets = [];
@@ -128,7 +129,16 @@ export class FallingStones extends GameTemplate {
     }
 
     gameOverMessage() {
-        if(this.gameOver == true) {
+        if(this.gameExit === true) {
+            this.gameOverText = [
+                "EXITED GAME", 
+                " ",
+                "Score: " + this.points,
+                " ", 
+                " ",
+                "New Game: E"];
+        } 
+        else if (this.gameOver === true) {
             this.gameOverText = [
                 "GAME OVER", 
                 " ",
