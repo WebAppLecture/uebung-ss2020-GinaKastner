@@ -8,11 +8,11 @@ window.gameEngine = new GameEngine(
 
 
 let skinStyle = document.querySelector("#skin"),
-    skins = ["gold","peach","basic","win95", "mech"];
+    skins = ["gold","peach","basic","win95", "mech", "sunset"];
 
 window.skinChanger = new SkinChanger(skinStyle, skins, "../03-CSS/src/css/");
 
 document.querySelector(".next").addEventListener("click", () => skinChanger.next());
 document.querySelector(".previous").addEventListener("click", () => skinChanger.previous());
 
-skinChanger.activeSkin = "basic";
+skinChanger.activeSkin = "sunset";
