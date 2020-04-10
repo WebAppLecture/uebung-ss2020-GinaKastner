@@ -3,19 +3,17 @@ import { GameObject, MovableGameObject } from "../GameObject.js";
 
 export class FallingStones extends GameTemplate {
 
-    // TODO: 
-    // 2.6: Prevent infinite shooting.
-
     start() {
         this.player = new Player(8);
         this.gameOver = false;
         this.points = 0;
         this.lives = 5;
         this.bullets = [];
+        this.maxBullets = 3;
         this.bulletSpeed = 8;
         this.stones = [];
         this.stoneSpeed = 2;
-        this.stoneSpawnModifier = 0.2; //Determines how long it takes for new stones to appear (percent of screen).
+        this.stoneSpawnModifier = 0.1; //Determines how long it takes for new stones to appear (percent of screen).
     } 
 
     bindControls() {
@@ -54,7 +52,9 @@ export class FallingStones extends GameTemplate {
 
     
     generateBullet() {
-        this.bullets.push(new Bullet(this.player, this.bulletSpeed));
+        if(this.bullets.length < this.maxBullets) {
+            this.bullets.push(new Bullet(this.player, this.bulletSpeed));
+        }
     }
 
     deleteBullet(index) {
