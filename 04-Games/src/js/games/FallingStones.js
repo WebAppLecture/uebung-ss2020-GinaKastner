@@ -176,7 +176,6 @@ export class Stone extends MovableGameObject {
         super(x, 0, 50, 100, "#6bd26b", 0, stoneSpeed);
     }
     
-    /*
     //Stone has reached border -> life lost. 
     borderReached(ctx) {
         return this.y > ctx.canvas.height;
@@ -186,5 +185,4 @@ export class Stone extends MovableGameObject {
     borderPassed(ctx) {
         return this.y > this.height + ctx.canvas.height;
     }
-    */
 }
