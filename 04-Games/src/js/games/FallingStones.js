@@ -166,7 +166,7 @@ export class Player extends MovableGameObject {
 export class Bullet extends MovableGameObject {
     
     constructor(player, bulletSpeed) {
-        super(player.x + player.width/2, player.y + player.height/2, 10, 10, "#6bd26b", player.speed, -bulletSpeed);
+        super(player.x + player.width/2, player.y, 10, 10, "#6bd26b", 0, -bulletSpeed);
     }
 
     borderPassed(ctx) {
@@ -178,7 +178,7 @@ export class Bullet extends MovableGameObject {
 export class Stone extends MovableGameObject {
     
     constructor(x, stoneSpeed) {
-        super(x, 0, 50, 100, "#6bd26b", 0, stoneSpeed);
+        super(x, 0, 50, 100, "#6bd26b", 0, stoneSpeed); //replace 0: -100 when done
     }
     
     //Stone has reached border -> check for life lost. 
