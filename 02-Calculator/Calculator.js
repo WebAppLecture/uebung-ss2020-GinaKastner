@@ -11,7 +11,7 @@ export class Calculator {
 
     setupNumPad() { 
         let numpad = document.querySelector(".numpad");
-        let symbols = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "+", "-", "*", "/", "^", "!", "AC"];
+        let symbols = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "+", "-", "*", "/", "^", "!", "AC"];
         
         //Add operations and AC.
         for(let i = 0; i < symbols.length; i++) {
@@ -28,12 +28,12 @@ export class Calculator {
         
         switch(buttonText) {
             case "AC": this.clear(); break;
-            case "+": this.currentOperation = this.currentCalculation.add; break;
-            case "-": this.currentOperation = this.currentCalculation.subtract; break;
-            case "*": this.currentOperation = this.currentCalculation.multiply; break;
-            case "/": this.currentOperation = this.currentCalculation.divide; break;
-            case "^": this.currentOperation = this.currentCalculation.pow; break;
-            case "!": this.currentOperation = this.currentCalculation.faculty; break;
+            case "+": this.currentOperation = this.currentCalculation.add.bind(this.currentCalculation); break;
+            case "-": this.currentOperation = this.currentCalculation.subtract.bind(this.currentCalculation); break;
+            case "*": this.currentOperation = this.currentCalculation.multiply.bind(this.currentCalculation); break;
+            case "/": this.currentOperation = this.currentCalculation.divide.bind(this.currentCalculation); break;
+            case "^": this.currentOperation = this.currentCalculation.pow.bind(this.currentCalculation); break;
+            case "!": this.currentOperation = this.currentCalculation.faculty.bind(this.currentCalculation); break;
             default: {
                 if(!this.currentCalculation) {
                     this.currentCalculation = new MyMath(buttonText);
