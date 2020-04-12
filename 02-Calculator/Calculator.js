@@ -52,6 +52,7 @@ export class Calculator {
                 }
                 else {
                     let result = this.currentOperation(buttonText).value;
+                    this.currentOperation = undefined;
                     this.printSolution(result);
                 }
             }
