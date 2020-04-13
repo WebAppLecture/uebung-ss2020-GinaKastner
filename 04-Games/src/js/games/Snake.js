@@ -50,11 +50,15 @@ export class Snake extends GameTemplate{
         this.moveSegments();
 
         if(this.borderCollsion(ctx) || this.selfCollision()) {
-            this.gameOverText = ["GAME OVER", "Score: " + (this.segments.length - this.startLength) ,"Restart: A"];
+            this.gameOverMessage();
             this.end();
         }
 
         this.foodCollision();
+    }
+
+    gameOverMessage() {
+        this.gameOverText = ["GAME OVER", "Score: " + (this.segments.length - this.startLength) , "Restart: E"];
     }
 
     moveSegments() {

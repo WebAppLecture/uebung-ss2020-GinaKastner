@@ -15,11 +15,7 @@ export class Pong extends GameTemplate{
 
     checkPoints() {
         if(this.leftPoints >= this.pointsToWin || this.rightPoints >= this.pointsToWin) { 
-            this.gameOverText = [
-                "GAME OVER", 
-                "",
-                "",
-                "rematch: A"];
+            this.gameOverMessage();
             this.gameOver = true;
         }
     }
@@ -32,8 +28,6 @@ export class Pong extends GameTemplate{
             "secondary": this.rightPaddle.down.bind(this.rightPaddle),
         };
     }
-
-
 
     update(ctx) {
         this.leftPaddle.update(ctx);

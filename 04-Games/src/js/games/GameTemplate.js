@@ -1,12 +1,11 @@
 export class GameTemplate {
 
     constructor(mode) {
-        this.gameOverText = ["GAME OVER", "Restart: A"];
         this.fillStyle = "#6bd26b";
         this.applyMode(mode);
         this.start();
         this.bindControls();
-    }
+        }
 
     applyMode(mode) {
         if(!mode) {
@@ -17,16 +16,20 @@ export class GameTemplate {
         });
     }
 
+    gameOverMessage() {
+        this.gameOverText = ["GAME OVER", " ", "Restart: E"];
+    }
+
     start() {}
 
     bindControls() {}
 
     tick(ctx) {
-        this.update(ctx);
-        if(this.gameOver || this.gameExit) {
+        if(this.gameOver) {
             this.gameOverScreen(ctx);
             return;
         }
+        this.update(ctx);
         this.draw(ctx);
     }
 
@@ -37,7 +40,7 @@ export class GameTemplate {
     gameOverScreen(ctx) {
         let fontSize = 30;
         ctx.fillStyle = this.fillStyle;
-        ctx.font = fontSize + "x monospace";
+        ctx.font = fontSize + "px monospace";
         ctx.textAlign = "center";
         ctx.textBaseLine = "middle";
 
@@ -49,9 +52,10 @@ export class GameTemplate {
 
     input(type, active) {
         if(type === "secondary") {
-            this.gameExit = true;
+            this.gameOverMessage();
+            this.gameOver = true;
         }
-        if((this.gameOver || this.gameExit)&& type === "primary") {
+        if(this.gameOver && type === "primary") {
             this.start();   
             this.bindControls();  
         }
@@ -67,5 +71,4 @@ export class GameTemplate {
     static get MODES() {
         return [];
     }
-
 }
