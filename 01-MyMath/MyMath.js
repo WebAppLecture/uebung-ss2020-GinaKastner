@@ -23,7 +23,7 @@ export class MyMath {
     }
 
     add(value) {
-        this.value += value;
+        this.value += value * 1;
         return this;
     }
 
@@ -38,14 +38,14 @@ export class MyMath {
     }
 
     divide(value) {
-        if(value != 0) {
+        if(value * 1 !== 0) {
             this.value /= value;
         } 
         return this;
     }
 
     pow(value) {
-        if(value == 0) this.value = 1; 
+        if(value * 1 === 0) this.value = 1; 
         else if(value > 1) {  
             let originalValue = this.value; 
             for(let i = 1; i < value; i++) {
