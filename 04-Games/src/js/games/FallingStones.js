@@ -21,7 +21,7 @@ export class FallingStones extends GameTemplate {
         this.inputBinding = {
             "left": this.player.left.bind(this.player),
             "right": this.player.right.bind(this.player),
-            "up": () => this.generateBullet(),
+            "up": (bool) => this.generateBullet(bool),
         };
     }
 
@@ -52,10 +52,11 @@ export class FallingStones extends GameTemplate {
     }
 
     
-    generateBullet() {
-        //Todo: Deactivate shooting on keyup?
-        if(this.bullets.length < this.maxBullets) {
-            this.bullets.push(new Bullet(this.player, this.bulletSpeed));
+    generateBullet(bool) {
+        if(bool) {
+            if(this.bullets.length < this.maxBullets) {
+                this.bullets.push(new Bullet(this.player, this.bulletSpeed));
+            }
         }
     }
 
