@@ -1,0 +1,32 @@
+input[type='range'] {
+width: 10vw;
+height: 1vw;
+
+background-color: transparent;
+cursor: pointer;
+}
+input[type='range'], input[type='range']::-webkit-slider-runnable-track, input[type='range']::-webkit-slider-thumb {
+-webkit-appearance: none;
+}
+input[type='range']::-webkit-slider-runnable-track {
+position: relative;
+width: 13vw;
+height: 1vw;
+border-radius: .1875vw;
+background: ivory;
+box-shadow: 0 0 .5vw 0 inset black;
+}
+
+input[type='range']::-webkit-slider-thumb {
+margin: .05vw;
+border: none;
+width: 2vw;
+height: .9vw;
+border-radius: .2vw;
+background-color:  black;
+box-shadow: 0 0 .5vw 0 black;
+}
+
+input[type='range']:focus {
+outline: none;
+}

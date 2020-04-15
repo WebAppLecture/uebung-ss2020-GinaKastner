@@ -1,0 +1,72 @@
+@import url(./range.css);
+
+.keyboard {
+    width: fit-content;
+
+    margin: 0 auto;
+    padding: 2vw 1.5vw;
+
+    background-color: black;
+
+    border-radius: .5vw .5vw 2vw 2vw;
+        
+    box-shadow: 0 0 5vw 2vw grey;
+}
+
+.controls {
+    display: inline-block;
+    width: 100%;
+    height: fit-content;
+    padding: 1vw;
+}
+
+.keys {
+    display: flex;
+    align-items: flex-start;
+    user-select: none;
+    
+    width: fit-content;
+
+}
+
+.keys > div {
+    display: inline-block;
+    position: relative;
+
+    width: 3vw;
+    height: 15vw;
+    top: 0;
+
+    transform-origin: 50% 0%;
+
+
+    background-color: ivory;
+    box-shadow: 0 .2vw .5vw 0 grey;
+
+    border-radius: 0 0 .2vw .2vw;
+
+    color: lightgrey;
+    text-align: center;
+    font-size: 1vw;
+    line-height: calc(2 * 15vw - 2.5vw);
+}
+
+.keys > div[data-note$="#"]  {
+    left: -.75vw;
+    margin-right: -1.5vw;
+    
+    width: 1.5vw;
+    height: 9.75vw;
+    background-color: black;
+
+    color: grey;
+    font-size: .5vw;
+    line-height: calc(2 * 9.75vw - 1vw);
+
+    z-index: 2;
+}
+
+.keys > div[data-note$="#"]:active,
+.keys > div.active {
+    transform: rotateX(-10deg)
+}
